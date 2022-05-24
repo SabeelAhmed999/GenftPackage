@@ -6,6 +6,8 @@ using Genft.WalletEvents;
 
 public class WalletManager : MonoBehaviour
 {
+    [SerializeField]
+    private GenftContractScriptable genftContract;
     public string WalletAddress{get;private set;}
     [SerializeField]
     private Text walletTextAddress;
