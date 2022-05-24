@@ -8,13 +8,13 @@ using Genft.WalletEvents;
 public class WalletLogin: MonoBehaviour
 {
     public Toggle rememberMe;
-
     void Start() {
         // if remember me is checked, set the account to the saved account
         if(PlayerPrefs.HasKey("RememberMe") && PlayerPrefs.HasKey("Account"))
         {
             if (PlayerPrefs.GetInt("RememberMe") == 1 && PlayerPrefs.GetString("Account") != "")
             {
+                WalletEventManager.IfWalletLoggedIn?.Invoke();
                 // move to next scene
                 //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
@@ -44,7 +44,7 @@ public class WalletLogin: MonoBehaviour
                 PlayerPrefs.SetInt("RememberMe", 0);
             print("Account: " + account);
             // send wallet address when loggedIn 
-            WalletEventManager.onWalletLoggedIn?.Invoke(account);
+            WalletEventManager.OnWalletLoggedIn?.Invoke(account);
             // load next scene
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }

@@ -16,4 +16,5 @@ public class Genft2022
         string response = await EVM.Call(_chain, _network, _contract, abi, method, args, _rpc);
         return response;
     }
+    
 }

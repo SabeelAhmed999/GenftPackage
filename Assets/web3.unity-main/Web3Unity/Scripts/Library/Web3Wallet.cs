@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using UnityEngine;
 using Nethereum.Util;
-
+using Genft.WalletEvents;
 public class Web3Wallet
 {
     #if (UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR
@@ -56,6 +56,7 @@ public class Web3Wallet
         }
         else
         {
+            WalletEventManager.OnSignRejection?.Invoke("sign error");
             throw new Exception("sign error");
         }   
     }
