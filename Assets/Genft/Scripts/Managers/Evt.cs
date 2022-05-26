@@ -1,6 +1,6 @@
 using System;
-namespace Genft{
-
+namespace Genft
+{
 public class Evt
 {
     private event Action action =delegate{};
