@@ -28,6 +28,9 @@ public class WalletManager : MonoBehaviour
         WalletEventManager.OnWalletLoggedIn.Addlistener(SetWalletAddress);  
         WalletEventManager.OnSignRejection.Addlistener(OnSignRejection); 
         WalletEventManager.OnTokkenBalanceCheck.Addlistener(OnCheckingTokkenBalance);
+        WalletEventManager.OnMintTransactionComplete.Addlistener(OnMintingCompleted);
+        WalletEventManager.OnMintTransactionFailed.Addlistener(OnFailedToMint);
+
     }
     private void SetWalletAddress(string address)
     {
@@ -44,12 +47,20 @@ public class WalletManager : MonoBehaviour
         errorMessage.text=msg;
         Invoke("ClearAlerts",2.5f);
     }
-
-
+    private void OnMintingCompleted()
+    {
+        Debug.Log("Nft Minting successful!");
+    }
+    private void OnFailedToMint()
+    {
+        Debug.Log("Failed to Mint!");
+    }
     private void OnDisable() {
         WalletEventManager.OnWalletLoggedIn.RemoveListener(SetWalletAddress);
         WalletEventManager.OnSignRejection.RemoveListener(OnSignRejection); 
         WalletEventManager.OnTokkenBalanceCheck.RemoveListener(OnCheckingTokkenBalance);
+        WalletEventManager.OnMintTransactionComplete.RemoveListener(OnMintingCompleted);
+        WalletEventManager.OnMintTransactionFailed.RemoveListener(OnFailedToMint);
     }
     private void ClearAlerts()
     {

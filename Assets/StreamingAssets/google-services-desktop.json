@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "203338421473",
+    "project_id": "genfttemplate",
+    "storage_bucket": "genfttemplate.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:203338421473:android:fed30d3d3b86fdaa4e53a0",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.FirebaseTemplateProjectNft"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "203338421473-j4eii4o4hia4nmpcvvv0n4vutgkv6pla.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0Fy6toLmm0MpP8tm_YF8ClIujgdV4fc4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "203338421473-j4eii4o4hia4nmpcvvv0n4vutgkv6pla.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
